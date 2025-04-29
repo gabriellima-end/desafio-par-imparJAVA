@@ -3,6 +3,7 @@ package logicasDiarias;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.ToIntFunction;
 
 
 //DESCUBRA SE O RESULTADO DA SOMA DOS VALORES INTEIROS DE UMA LISTA É IMPAR OU PAR
@@ -25,12 +26,10 @@ public class ParOuImpar {
 		int numSum2 = inputNum.nextInt();
 		
 		inputNum.nextLine(); //consumindo nova linha
-		
 		System.out.println("Deseja adiconar mais números para soma? 'ss' para sim | 'nn' para não ");
-		
 		String addMoreNum = inputNum.nextLine();
-		
-		
+
+				
 		//CASO USUÁRIO QUEIRA ADICIONAR MAIS NÚMERO PARA SOMA
 		if(addMoreNum.equals("ss")) {
 			
@@ -39,11 +38,35 @@ public class ParOuImpar {
 			nums.add(numSum2);
 			
 			//ADICIONAR MAIS NUMEROS
-			
+			System.out.println("Adicione quantos números quiser, quando quiser parar digite 'finalizar' e iremos mostrar o resultado.");
 			while(true) {
 				
 				String inputAdd = inputNum.nextLine	();
 				if(inputAdd.equals("finalizar")){
+					
+					int soma = 0;
+					
+					for(int numero : nums) {
+						
+						soma += numero;
+						
+					}
+					
+					
+					System.out.println("numeros adicionados: ");
+					System.out.println(nums.toString());
+					
+					
+					if(soma % 2 == 0) {
+						
+						System.out.println("soma de todos os números adicionados é PAR: " + soma);
+						
+					}else {
+						
+						System.out.println("soma de todos os números adicionados é ÍMPAR: " + soma);
+						
+					}
+					
 					
 					break;
 				
@@ -82,6 +105,7 @@ public class ParOuImpar {
 		
 		
 		inputNum.close();
-	}
 	
+		
+	}
 }
