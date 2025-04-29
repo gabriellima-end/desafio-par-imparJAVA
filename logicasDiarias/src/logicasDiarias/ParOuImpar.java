@@ -10,6 +10,9 @@ import java.util.function.ToIntFunction;
 //SE O RESULTADO DA SOMA FOR PAR, IMPRIMA PAR, SE FOR IMPAR, IMPRIMA IMPAR
 //OBS: USE SCANNER PARA ENTRADA DO USUÁRIO
 
+
+//QUASE PRONTO, FALTA APENAS LANÇAR UM ERRO CASO USUÁRIO NÃO DIGITE SS OU NN
+
 public class ParOuImpar {
 
 	public static void main(String[] args) {
