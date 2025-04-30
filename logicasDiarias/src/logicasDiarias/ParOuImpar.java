@@ -10,9 +10,6 @@ import java.util.function.ToIntFunction;
 //SE O RESULTADO DA SOMA FOR PAR, IMPRIMA PAR, SE FOR IMPAR, IMPRIMA IMPAR
 //OBS: USE SCANNER PARA ENTRADA DO USUÁRIO
 
-
-//QUASE PRONTO, FALTA APENAS LANÇAR UM ERRO CASO USUÁRIO NÃO DIGITE SS OU NN
-
 public class ParOuImpar {
 
 	public static void main(String[] args) {
@@ -29,19 +26,20 @@ public class ParOuImpar {
 		int numSum2 = inputNum.nextInt();
 		
 		inputNum.nextLine(); //consumindo nova linha
+		
+		//DEV -- DESENVOLVER O LANÇAMENTO DE ERRO CASO USUÁRIO NÃO DIGITE NEM SS E NEM NN
 		System.out.println("Deseja adiconar mais números para soma? 'ss' para sim | 'nn' para não ");
 		String addMoreNum = inputNum.nextLine();
 
-				
 		//CASO USUÁRIO QUEIRA ADICIONAR MAIS NÚMERO PARA SOMA
 		if(addMoreNum.equals("ss")) {
-			
 			
 			nums.add(numSum);
 			nums.add(numSum2);
 			
 			//ADICIONAR MAIS NUMEROS
-			System.out.println("Adicione quantos números quiser, quando quiser parar digite 'finalizar' e iremos mostrar o resultado.");
+			System.out.println("Digite o numero e aperte enter, adicione quantos numeros quiser \n "
+					+ "quando quiser parar digite 'finalizar' e iremos mostrar o resultado.");
 			while(true) {
 				
 				String inputAdd = inputNum.nextLine	();
@@ -55,10 +53,8 @@ public class ParOuImpar {
 						
 					}
 					
-					
 					System.out.println("numeros adicionados: ");
 					System.out.println(nums.toString());
-					
 					
 					if(soma % 2 == 0) {
 						
@@ -70,9 +66,7 @@ public class ParOuImpar {
 						
 					}
 					
-					
 					break;
-				
 			}
 			
 			try {
@@ -103,12 +97,10 @@ public class ParOuImpar {
 				
 			}
 			
-			
 		}
 		
-		
-		inputNum.close();
-	
+	inputNum.close();
 		
 	}
+	
 }
