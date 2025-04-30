@@ -28,79 +28,90 @@ public class ParOuImpar {
 		inputNum.nextLine(); //consumindo nova linha
 		
 		//DEV -- DESENVOLVER O LANÇAMENTO DE ERRO CASO USUÁRIO NÃO DIGITE NEM SS E NEM NN
-		System.out.println("Deseja adiconar mais números para soma? 'ss' para sim | 'nn' para não ");
-		String addMoreNum = inputNum.nextLine();
-
-		//CASO USUÁRIO QUEIRA ADICIONAR MAIS NÚMERO PARA SOMA
-		if(addMoreNum.equals("ss")) {
+		
+		while(true) {
+			System.out.println("Deseja adiconar mais números para soma? 'ss' para sim | 'nn' para não ");
+			String addMoreNum = inputNum.nextLine();		
 			
-			nums.add(numSum);
-			nums.add(numSum2);
+			if(!addMoreNum.equals("ss") && !addMoreNum.equals("nn")){
 			
-			//ADICIONAR MAIS NUMEROS
-			System.out.println("Digite o numero e aperte enter, adicione quantos numeros quiser \n "
-					+ "quando quiser parar digite 'finalizar' e iremos mostrar o resultado.");
-			while(true) {
 				
-				String inputAdd = inputNum.nextLine	();
-				if(inputAdd.equals("finalizar")){
-					
-					int soma = 0;
-					
-					for(int numero : nums) {
-						
-						soma += numero;
-						
-					}
-					
-					System.out.println("numeros adicionados: ");
-					System.out.println(nums.toString());
-					
-					if(soma % 2 == 0) {
-						
-						System.out.println("soma de todos os números adicionados é PAR: " + soma);
-						
-					}else {
-						
-						System.out.println("soma de todos os números adicionados é ÍMPAR: " + soma);
-						
-					}
-					
-					break;
+				System.out.println("Digite um valor válido");
+				
+				continue;
 			}
 			
-			try {
+	
+			//CASO USUÁRIO QUEIRA ADICIONAR MAIS NÚMERO PARA SOMA
+			if(addMoreNum.equals("ss")) {
 				
-				int num = Integer.parseInt(inputAdd);
-				nums.add(num);
+				nums.add(numSum);
+				nums.add(numSum2);
 				
-			}catch(Exception e){
+				//ADICIONAR MAIS NUMEROS
+				System.out.println("Digite o numero e aperte enter, adicione quantos numeros quiser \n "
+						+ "quando quiser parar digite 'finalizar' e iremos mostrar o resultado.");
+				while(true) {
+					
+					String inputAdd = inputNum.nextLine();
+					if(inputAdd.equals("finalizar")){
+						
+						int soma = 0;
+						
+						for(int numero : nums) {
+							
+							soma += numero;
+							
+						}
+						
+						System.out.println("numeros adicionados: ");
+						System.out.println(nums.toString());
+						
+						if(soma % 2 == 0) {
+							
+							System.out.println("soma de todos os números adicionados é PAR: " + soma);
+							
+						}else {
+							
+							System.out.println("soma de todos os números adicionados é ÍMPAR: " + soma);
+							
+						}
+						
+						break;
+				}
 				
-				System.out.println("por favor digite um número válido");
+				try {
+					
+					int num = Integer.parseInt(inputAdd);
+					nums.add(num);
+					
+				}catch(Exception e){
+					
+					System.out.println("por favor digite um número válido");
+					
+				}	
 				
-			}	
-			
+				}
 			}
-		}
-		
-		if(addMoreNum.equals("nn")){
 			
-			int result = numSum + numSum2;
-			
-			if(result % 2 == 0) {
+			if(addMoreNum.equals("nn")){
 				
-				System.out.println("O resultado é par: " + result);
+				int result = numSum + numSum2;
 				
-			}else {
-				
-				System.out.println("O resultado é ímpar: " + result);
+				if(result % 2 == 0) {
+					
+					System.out.println("O resultado é par: " + result);
+					
+				}else {
+					
+					System.out.println("O resultado é ímpar: " + result);
+					
+				}
 				
 			}
 			
-		}
-		
-	inputNum.close();
-		
+		inputNum.close();
+		}	
 	}
 	
 }
